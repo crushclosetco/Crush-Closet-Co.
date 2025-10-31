@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Crush Closet — curated finds that’ll have you crushing</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Crush Closet curates season- and occasion-ready outfits you'll actually wear. Fresh crushes every Friday.">
+  <meta name="theme-color" content="#111111">
+  <meta property="og:title" content="Crush Closet">
+  <meta property="og:description" content="curated finds that’ll have you crushing">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/assets/og-cover.png">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500..800&family=Inter:wght@300..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#">
+      <img src="./assets/logo.svg" alt="Crush Closet logo" width="36" height="36">
+      <span>Crush Closet</span>
+    </a>
+    <nav class="nav">
+      <a href="#picks">Crushes of the Week</a>
+      <a href="#about">About Us</a>
+      <a href="#subscribe">Subscribe</a>
+    </nav>
+    <button class="mode-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">☾</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <h1>Crush Closet</h1>
+        <p>Curated finds by season, occasion, and budget — styled like your chic best friend is dressing you.</p>
+        <div class="hero-cta">
+          <a class="button primary" href="#picks">See this week’s crushes</a>
+          <a class="button ghost" href="#subscribe">Get the Crush Closet newsletter</a>
+        </div>
+        <div class="filters" aria-label="Filters">
+          <div class="filter-group">
+            <label for="season">Season</label>
+            <select id="season">
+              <option value="">All</option>
+              <option>Fall</option>
+              <option>Winter</option>
+              <option>Spring</option>
+              <option>Summer</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="occasion">Occasion</label>
+            <select id="occasion">
+              <option value="">All</option>
+              <option>Everyday</option>
+              <option>Internship</option>
+              <option>Game Day</option>
+              <option>Date Night</option>
+              <option>Travel</option>
+              <option>Holiday Party</option>
+              <option>Campus</option>
+              <option>Workout</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="budget">Budget</label>
+            <select id="budget">
+              <option value="">All</option>
+              <option>Save</option>
+              <option>Mid</option>
+              <option>Splurge</option>
+            </select>
+          </div>
+          <div class="filter-group search">
+            <label class="sr-only" for="search">Search</label>
+            <input id="search" type="search" placeholder="Search color, item, brand…">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="picks" class="picks section">
+      <div class="section-head">
+        <h2>Crushes of the Week</h2>
+        <p class="kicker">pieces we can’t stop thinking about • refreshed every Friday</p>
+      </div>
+      <div id="grid" class="grid" role="list"></div>
+      <div id="empty" class="empty hidden" role="status">No items match your filters. Try clearing one or two.</div>
+    </section>
+
+    
+
+
+<section id="about" class="about section">
+  <div class="about-card">
+    <h3>About Us</h3>
+    <p>Hey babes! Welcome to Crush Closet — a safe place with all the styles worth obsessing over.</p>
+    <p>Here, you’ll find everything we’re currently falling for, curated for any style, occasion, or season.</p>
+    <p>Follow along if, like us, you think clothes are the only thing worth crushing on.</p>
+
+    <div class="divider-heart">❤</div>
+
+    <p><strong>Have an event or style vibe in mind?</strong> DM us — we love building personal mini edits.</p>
+
+    <p class="small-note">Some of the links we share are affiliate links (meaning we may earn a small commission at no extra cost to you). It helps keep the crushes coming — and your closet inspired.</p>
+
+    <p class="signoff">XOXO,<br>Closet Crush Co.</p>
+  </div>
+</section>
+
+
+
+
+    <section id="subscribe" class="subscribe section">
+      <div class="subscribe-inner">
+        <h3>Get Crush Closet in your inbox</h3>
+        <p>One email. The best pieces. Zero spam.</p>
+        <form name="subscribe" method="post" data-netlify="true">
+          <input type="email" name="email" placeholder="you@example.com" required aria-label="Email address">
+          <button type="submit" class="button primary">Subscribe</button>
+        </form>
+        <p class="micro">By subscribing you agree to our <a href="#">terms</a> and <a href="#">privacy</a>.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Crush Closet · <a href="#">Instagram</a> · <a href="#">TikTok</a> · <a href="#">Pinterest</a></p>
+  </footer>
+
+  <template id="card-tpl">
+    <article class="card" role="listitem">
+      <button class="save" aria-label="Save item" title="Save item">♡</button>
+      <img class="card-img" alt="">
+      <div class="card-body">
+        <div class="eyebrow"></div>
+        <h3 class="card-title"></h3>
+        <p class="card-meta"></p>
+        <p class="card-desc"></p>
+      </div>
+      <div class="card-actions">
+        <a class="button primary buy" target="_blank" rel="nofollow noopener">Shop</a>
+        <a class="button ghost alt" target="_blank" rel="nofollow noopener">Alt</a>
+      </div>
+    </article>
+  </template>
+
+  <script src="./app.js" defer></script>
+</body>
+</html>

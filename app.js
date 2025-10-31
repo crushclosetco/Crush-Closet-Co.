@@ -37,7 +37,7 @@ els.modeToggle.addEventListener('click', () => {
   localStorage.setItem("theme", state.theme);
 });
 
-fetch("./content/picks.json")
+fetch("picks.json")
   .then(r => r.json())
   .then(data => {
     state.items = data.items || [];
